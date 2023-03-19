@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Lottery Casino</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>Lottery Casino</h1>
+      <h2>Play the lottery and win big!</h2>
+      <p>Pick 4 numbers between 1 and 9.</p>
+      <form class="myForm">
+        <label for="number1">Number 1:</label>
+        <input
+          id="number1"
+          type="number"
+          name="number1"
+          id="number1"
+          min="1"
+          max="9"
+        />
+        <label for="number2">Number 2:</label>
+        <input
+          id="number2"
+          type="number"
+          name="number2"
+          id="number2"
+          min="1"
+          max="9"
+        />
+        <label for="number3">Number 3:</label>
+        <input
+          id="number3"
+          type="number"
+          name="number3"
+          id="number3"
+          min="1"
+          max="9"
+        />
+        <input type="submit" value="Play until win" />
+      </form>
+      <div class="result-wrapper">
+        <h2>Result</h2>
+        <ul class="results"></ul>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
