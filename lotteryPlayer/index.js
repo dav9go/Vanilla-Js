@@ -1,11 +1,12 @@
 const myForm = document.querySelector(".myForm");
-const results = document.querySelector(".results");
-const result = document.createElement("p");
 const TICKET_PRICE = 25000;
+var myMoney = 1000000000;
 var myNumber = [];
 var plays = 0;
 var moneySpent = 0;
 var won = 0;
+
+/***** PLAY UNTIL WIN GAME *****/
 
 //Function that adds event listener to the form
 function submitListener() {
@@ -45,6 +46,8 @@ function compareNumbers() {
     }
   }
   if (matches === 3) {
+    const results = document.querySelector(".results");
+    const result = document.createElement("p");
     won += TICKET_PRICE * 100;
     result.textContent = `You played ${plays} times, spent ${formatNumber(
       moneySpent

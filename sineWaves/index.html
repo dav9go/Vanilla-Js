@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      const canvas = document.querySelector("canvas");
+      const c = canvas.getContext("2d");
+
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+
+      let waveLength = 0.002;
+      let waveAmplitude = canvas.height / 3;
+      let increment = 0.01;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        c.fillStyle = "rgba(255,255,255,1)";
+        c.fillRect(Math.sin(canvas.width), 0, canvas.width, canvas.height);
+
+        c.beginPath();
+
+        c.filter = "blur(50px)";
+
+        c.lineWidth = 20;
+        c.moveTo(0, canvas.height / 2);
+
+        for (let i = 0; i < canvas.width; i++) {
+          c.lineTo(
+            i,
+            canvas.height / 2 +
+              Math.sin(i * waveLength + increment) *
+                waveAmplitude *
+                Math.sin(increment)
+          );
+        }
+        c.strokeStyle = "#7377E2";
+        c.stroke();
+        increment += 0.01;
+      }
+
+      animate();
+    </script>
+  </body>
+</html>
